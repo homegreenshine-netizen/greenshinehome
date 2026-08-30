@@ -174,7 +174,7 @@ export default function WhyUsSection() {
           </StaggerContainer>
 
           {/* CTA */}
-          <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }} className="inline-block">
+          {/* <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }} className="inline-block">
             <Link
               href="/about"
               className="inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-700 px-7 py-3.5 font-semibold text-white shadow-[0_4px_14px_rgba(16,185,129,0.25)] transition-all duration-300 hover:shadow-[0_8px_22px_rgba(16,185,129,0.35)] focus:outline-none focus:ring-4 focus:ring-emerald-500/20"
@@ -184,7 +184,7 @@ export default function WhyUsSection() {
                 →
               </span>
             </Link>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
     </section>

@@ -6,9 +6,7 @@ import Image from "next/image";
 
 const quickLinks = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "About Us", href: "/about" },
-  { label: "Contact", href: "/contact" },
+ 
 ];
 
 const services = [
@@ -92,7 +90,7 @@ export default function Footer() {
           </p>
 
           <motion.a
-            href="https://wa.me/923001234567"
+            href="https://wa.me/923164331042"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ x: 5 }}

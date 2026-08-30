@@ -22,6 +22,7 @@ import {
   useMotionVariants,
 } from "../components/motion/animations";
 
+const WHATSAPP_NUMBER = "923164331042";
 
 const inputCls = `
   w-full rounded-xl border border-slate-200
@@ -34,6 +35,38 @@ const inputCls = `
   focus:bg-white
   focus:shadow-[0_0_0_4px_rgba(16,185,129,0.12)]
 `;
+
+const timeSlots = [
+  "8:00 AM - 10:00 AM",
+  "10:00 AM - 12:00 PM",
+  "12:00 PM - 2:00 PM",
+  "2:00 PM - 4:00 PM",
+  "4:00 PM - 6:00 PM",
+  "6:00 PM - 8:00 PM",
+];
+
+const services = [
+  "Home Cleaning",
+  "Deep Cleaning",
+  "Sofa Cleaning",
+  "Carpet Cleaning",
+  "Office Cleaning",
+  "Bathroom Cleaning",
+  "Plumbing",
+  "Helper Service",
+];
+
+const areas = [
+  "DHA Lahore",
+  "Gulberg",
+  "Johar Town",
+  "Model Town",
+  "Bahria Town",
+  "Wapda Town",
+  "Garden Town",
+  "Cantt",
+  "Other",
+];
 
 const benefits = [
   {
@@ -53,26 +86,44 @@ const benefits = [
   },
 ];
 
+function getToday() {
+  const today = new Date();
+
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+  const day = String(today.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
+}
+
 export default function Booking() {
   const [submitted, setSubmitted] = useState(false);
 
+  // Today's date is selected automatically.
+  const [selectedDate, setSelectedDate] = useState(getToday());
+
+  // Keep time empty until user chooses one.
+  const [selectedTime, setSelectedTime] = useState("");
+
   const leftVar = useMotionVariants(fadeInLeft);
   const titleVar = useMotionVariants(fadeUp);
+
+  const today = getToday();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
 
-    const name = formData.get("name");
-    const phone = formData.get("phone");
-    const email = formData.get("email");
-    const service = formData.get("service");
-    const date = formData.get("date");
-    const time = formData.get("time");
-    const area = formData.get("area");
-    const address = formData.get("address");
-    const instructions = formData.get("instructions");
+    const name = String(formData.get("name") || "");
+    const phone = String(formData.get("phone") || "");
+    const email = String(formData.get("email") || "");
+    const service = String(formData.get("service") || "");
+    const date = String(formData.get("date") || "");
+    const time = String(formData.get("time") || "");
+    const area = String(formData.get("area") || "");
+    const address = String(formData.get("address") || "");
+    const instructions = String(formData.get("instructions") || "");
 
     const message =
       `*New Cleaning Booking Request* 🧽\n\n` +
@@ -87,7 +138,7 @@ export default function Booking() {
       `📝 *Instructions:* ${instructions || "None"}`;
 
     window.open(
-      `https://wa.me/923164331042?text=${encodeURIComponent(message)}`,
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
       "_blank"
     );
 
@@ -106,7 +157,7 @@ export default function Booking() {
           "
         />
 
-        <div className="relative mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 sm:py-24 lg:px-8 lg:py-28">
+        <div className="relative mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <FadeIn>
             <span className="inline-flex items-center gap-2 rounded-md border border-emerald-500/10 bg-emerald-50 px-3 py-1 text-[11px] font-extrabold tracking-[2px] text-emerald-700">
               <CalendarDays className="h-3.5 w-3.5" />
@@ -138,8 +189,8 @@ export default function Booking() {
 
       {/* BOOKING */}
       <section className="bg-white">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 lg:px-8 lg:py-24">
-          
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 lg:px-8 lg:py-20">
+
           {/* LEFT */}
           <motion.div
             variants={leftVar}
@@ -167,7 +218,7 @@ export default function Booking() {
 
             {/* Benefits */}
             <StaggerContainer
-              className="mt-8 space-y-5"
+              className="mt-7 space-y-4"
               staggerDelay={0.08}
             >
               {benefits.map((benefit) => {
@@ -180,8 +231,8 @@ export default function Booking() {
                       transition={{ duration: 0.2 }}
                       className="group flex gap-3"
                     >
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-emerald-500/10 bg-emerald-50 text-emerald-600 transition-colors group-hover:bg-emerald-100">
-                        <Icon className="h-4.5 w-4.5" />
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-emerald-500/10 bg-emerald-50 text-emerald-600 group-hover:bg-emerald-100">
+                        <Icon className="h-4 w-4" />
                       </div>
 
                       <div>
@@ -201,9 +252,9 @@ export default function Booking() {
 
             {/* WhatsApp */}
             <FadeIn delay={0.25}>
-              <div className="mt-8 rounded-2xl border border-emerald-500/10 bg-gradient-to-br from-emerald-50 to-cyan-50 p-5">
+              <div className="mt-7 rounded-2xl border border-emerald-500/10 bg-gradient-to-br from-emerald-50 to-cyan-50 p-5">
                 <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#25D366] text-white shadow-sm">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#25D366] text-white">
                     <MessageCircle className="h-5 w-5" />
                   </div>
 
@@ -213,10 +264,10 @@ export default function Booking() {
                     </p>
 
                     <a
-                      href="https://wa.me/923001234567"
+                      href={`https://wa.me/${WHATSAPP_NUMBER}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-1 inline-flex text-sm font-extrabold text-emerald-700 transition-colors hover:text-emerald-500"
+                      className="mt-1 inline-flex text-sm font-extrabold text-emerald-700 hover:text-emerald-500"
                     >
                       Chat with us directly →
                     </a>
@@ -231,7 +282,7 @@ export default function Booking() {
             <motion.div
               whileHover={{ y: -2 }}
               transition={{ duration: 0.3 }}
-              className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_10px_35px_rgba(15,23,42,0.05)] sm:rounded-3xl sm:p-8"
+              className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_10px_35px_rgba(15,23,42,0.05)] sm:rounded-3xl sm:p-7"
             >
               {submitted ? (
                 <motion.div
@@ -254,7 +305,11 @@ export default function Booking() {
 
                   <button
                     type="button"
-                    onClick={() => setSubmitted(false)}
+                    onClick={() => {
+                      setSubmitted(false);
+                      setSelectedDate(getToday());
+                      setSelectedTime("");
+                    }}
                     className="mt-6 rounded-xl border border-emerald-500 px-5 py-3 text-sm font-semibold text-emerald-600 transition-all hover:bg-emerald-50"
                   >
                     Make Another Booking
@@ -262,6 +317,7 @@ export default function Booking() {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit}>
+
                   {/* INFORMATION */}
                   <div className="border-b border-slate-200 pb-6">
                     <h3 className="mb-5 flex items-center gap-2 text-base font-extrabold text-slate-900">
@@ -346,21 +402,21 @@ export default function Booking() {
                         <option value="" disabled>
                           Select a service
                         </option>
-                        <option>Home Cleaning</option>
-                        <option>Deep Cleaning</option>
-                        <option>Sofa Cleaning</option>
-                        <option>Carpet Cleaning</option>
-                        <option>Office Cleaning</option>
-                        <option>Bathroom Cleaning</option>
-                        <option>Plumbing</option>
-                        <option>Helper Service</option>
+
+                        {services.map((service) => (
+                          <option key={service} value={service}>
+                            {service}
+                          </option>
+                        ))}
                       </select>
                     </div>
 
                     <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+
+                      {/* DATE */}
                       <div>
                         <label className="mb-1.5 block text-xs font-bold text-slate-700">
-                          Date *
+                          Preferred Date *
                         </label>
 
                         <div className="relative">
@@ -370,32 +426,46 @@ export default function Booking() {
                             type="date"
                             name="date"
                             required
+                            min={today}
+                            value={selectedDate}
+                            onChange={(e) => setSelectedDate(e.target.value)}
                             className={`${inputCls} pl-10`}
                           />
                         </div>
+
+                        <p className="mt-1.5 text-[11px] text-slate-400">
+                          Today is automatically selected. Previous dates are
+                          unavailable.
+                        </p>
                       </div>
 
+                      {/* TIME */}
                       <div>
                         <label className="mb-1.5 block text-xs font-bold text-slate-700">
                           Preferred Time *
                         </label>
 
-                        <select
-                          name="time"
-                          required
-                          defaultValue=""
-                          className={inputCls}
-                        >
-                          <option value="" disabled>
-                            Select time
-                          </option>
-                          <option>8:00 AM - 10:00 AM</option>
-                          <option>10:00 AM - 12:00 PM</option>
-                          <option>12:00 PM - 2:00 PM</option>
-                          <option>2:00 PM - 4:00 PM</option>
-                          <option>4:00 PM - 6:00 PM</option>
-                          <option>6:00 PM - 8:00 PM</option>
-                        </select>
+                        <div className="relative">
+                          <Clock3 className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+
+                          <select
+                            name="time"
+                            required
+                            value={selectedTime}
+                            onChange={(e) => setSelectedTime(e.target.value)}
+                            className={`${inputCls} pl-10`}
+                          >
+                            <option value="" disabled>
+                              Select time
+                            </option>
+
+                            {timeSlots.map((time) => (
+                              <option key={time} value={time}>
+                                {time}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -421,15 +491,12 @@ export default function Booking() {
                         <option value="" disabled>
                           Select your area
                         </option>
-                        <option>DHA Lahore</option>
-                        <option>Gulberg</option>
-                        <option>Johar Town</option>
-                        <option>Model Town</option>
-                        <option>Bahria Town</option>
-                        <option>Wapda Town</option>
-                        <option>Garden Town</option>
-                        <option>Cantt</option>
-                        <option>Other</option>
+
+                        {areas.map((area) => (
+                          <option key={area} value={area}>
+                            {area}
+                          </option>
+                        ))}
                       </select>
                     </div>
 
