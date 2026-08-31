@@ -83,7 +83,7 @@ export default function PricingSection() {
   
                   {/* Title */}
                   <h3 className="mb-3 text-xl font-bold tracking-tight text-slate-900">
-                   fu {card.title}
+                   {card.title}
                   </h3>
   
                   {/* Description */}
