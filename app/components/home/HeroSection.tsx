@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import StaggerContainer from "../motion/StaggerContainer";
 import StaggerItem from "../motion/StaggerItem";
 import { useMotionVariants, buttonHover } from "../motion/animations";
+import { Broom, House, Snowflake, Sparkles, Wrench, Zap } from "lucide-react";
 
 const trustStats = [
   { value: "500+", label: "Bookings" },
@@ -568,22 +569,68 @@ export default function HeroSection() {
               </motion.span>
 
               {/* Main Cleaning Icon */}
-              <motion.div
-                aria-hidden="true"
-                variants={floatMain}
-                initial="hidden"
-                animate="visible"
-                whileHover={{ scale: 1.1 }}
-                className="
-                  relative z-10
-                  text-[100px]
-                  leading-none
-                  drop-shadow-[0_18px_18px_rgba(15,23,42,0.14)]
-                  sm:text-[130px]
-                "
-              >
-                🧹
-              </motion.div>
+         <div className="relative z-10 h-[180px] w-[280px] sm:h-[220px] sm:w-[350px]">
+  {/* Main icon */}
+  <motion.div
+    aria-hidden="true"
+    variants={floatMain}
+    initial="hidden"
+    animate="visible"
+    whileHover={{ scale: 1.1 }}
+    className="
+      absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+      text-blue-600
+      drop-shadow-[0_18px_18px_rgba(15,23,42,0.14)]
+    "
+  >
+    <Sparkles size={110} strokeWidth={1.5} />
+  </motion.div>
+
+  {/* Cleaning */}
+  <motion.div
+    animate={{ y: [0, -12, 0], rotate: [0, 5, 0] }}
+    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+    className="absolute left-2 top-6 text-cyan-500"
+  >
+    <Broom size={55} />
+  </motion.div>
+
+  {/* Electrician */}
+  <motion.div
+    animate={{ y: [0, 10, 0], rotate: [0, -8, 0] }}
+    transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+    className="absolute right-4 top-2 text-yellow-500"
+  >
+    <Zap size={50} />
+  </motion.div>
+
+  {/* AC */}
+  <motion.div
+    animate={{ y: [0, -8, 0], x: [0, 5, 0] }}
+    transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+    className="absolute bottom-5 left-8 text-sky-500"
+  >
+    <Snowflake size={48} />
+  </motion.div>
+
+  {/* Tools */}
+  <motion.div
+    animate={{ rotate: [0, 8, -8, 0] }}
+    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+    className="absolute bottom-2 right-8 text-orange-500"
+  >
+    <Wrench size={48} />
+  </motion.div>
+
+  {/* Home services */}
+  <motion.div
+    animate={{ y: [0, -6, 0] }}
+    transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+    className="absolute left-1/2 top-0 -translate-x-1/2 text-green-500"
+  >
+    <House size={42} />
+  </motion.div>
+</div>
             </div>
 
             {/* Card Footer */}
