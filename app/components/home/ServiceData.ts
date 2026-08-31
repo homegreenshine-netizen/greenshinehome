@@ -99,34 +99,34 @@ export const services = [
       price: "Starting from Rs. 2,350",
       visitFee: "Get a quote on WhatsApp",
     },
-    {
-      icon: Wrench,
-      title: "Plumbing",
-      description:
-        "Reliable plumbing help for leaks, taps, pipes, fittings and common repairs.",
-      details: [
-        "Leak repair",
-        "Tap and fitting repairs",
-        "Pipe-related issues",
-        "Bathroom plumbing",
-        "General household plumbing",
-      ],
-      price: "Contact us for pricing",
-      visitFee: "Get a quote on WhatsApp",
-    },
-    {
-      icon: Users,
-      title: "Helper Service",
-      description:
-        "Reliable helpers for household tasks, moving, lifting and everyday assistance.",
-      details: [
-        "Household assistance",
-        "Moving and lifting help",
-        "General home tasks",
-        "Event and occasional assistance",
-        "Flexible service options",
-      ],
-      price: "Contact us for pricing",
-      visitFee: "Get a quote on WhatsApp",
-    },
+    // {
+    //   icon: Wrench,
+    //   title: "Plumbing",
+    //   description:
+    //     "Reliable plumbing help for leaks, taps, pipes, fittings and common repairs.",
+    //   details: [
+    //     "Leak repair",
+    //     "Tap and fitting repairs",
+    //     "Pipe-related issues",
+    //     "Bathroom plumbing",
+    //     "General household plumbing",
+    //   ],
+    //   price: "Contact us for pricing",
+    //   visitFee: "Get a quote on WhatsApp",
+    // },
+    // {
+    //   icon: Users,
+    //   title: "Helper Service",
+    //   description:
+    //     "Reliable helpers for household tasks, moving, lifting and everyday assistance.",
+    //   details: [
+    //     "Household assistance",
+    //     "Moving and lifting help",
+    //     "General home tasks",
+    //     "Event and occasional assistance",
+    //     "Flexible service options",
+    //   ],
+    //   price: "Contact us for pricing",
+    //   visitFee: "Get a quote on WhatsApp",
+    // },
   ];

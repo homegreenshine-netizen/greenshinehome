@@ -12,7 +12,8 @@ export default function PricingSection() {
       {
         icon: "⏱️",
         title: "Hourly Services",
-        desc: "Cleaning and helper services can be booked by the hour. Your total price depends on the number of hours required.",
+        // desc: "Cleaning and helper services can be booked by the hour. Your total price depends on the number of hours required.",
+        desc: "Cleaning services can be booked by the hour. Your total price depends on the number of hours required.",
         price: "Priced per hour",
       },
       {
@@ -21,12 +22,12 @@ export default function PricingSection() {
         desc: "Deep cleaning, sofa, carpet and other cleaning prices depend on the size and condition of the job.",
         price: "Price based on job",
       },
-      {
-        icon: "🔧",
-        title: "Plumbing Services",
-        desc: "Plumbing prices depend on the type of repair, parts and work required.",
-        price: "Quote based on work",
-      },
+      // {
+      //   icon: "🔧",
+      //   title: "Plumbing Services",
+      //   desc: "Plumbing prices depend on the type of repair, parts and work required.",
+      //   price: "Quote based on work",
+      // },
     ];
   
     return (

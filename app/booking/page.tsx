@@ -53,7 +53,7 @@ const services = [
   "Office Cleaning",
   "Bathroom Cleaning",
   "Plumbing",
-  "Helper Service",
+  // "Helper Service",
 ];
 
 const areas = [

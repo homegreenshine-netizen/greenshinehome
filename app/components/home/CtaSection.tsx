@@ -49,7 +49,8 @@ export default function CtaSection() {
         transition={{ delay: 0.2 }}
         className="text-slate-400 text-lg mb-9 max-w-[600px] mx-auto"
       >
-        Book cleaning, plumbing or helper services today.
+        {/* Book cleaning, plumbing or helper services today. */}
+        Book cleaning today.
       </motion.p>
 
       <motion.div

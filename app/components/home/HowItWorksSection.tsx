@@ -9,7 +9,8 @@ const steps = [
   {
     number: "01",
     title: "Choose a Service",
-    desc: "Select cleaning, plumbing or helper service according to your needs.",
+    // desc: "Select cleaning, plumbing or helper service according to your needs.",
+    desc: "Select cleaning according to your needs.",
   },
   {
     number: "02",
