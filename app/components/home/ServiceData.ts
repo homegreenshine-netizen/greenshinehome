@@ -8,6 +8,8 @@ import {
   Wrench,
   Users,
   Zap,
+  Refrigerator,
+  Snowflake,
 } from "lucide-react";
 export const services = [
     {
@@ -130,7 +132,8 @@ export const services = [
     //   price: "Contact us for pricing",
     //   visitFee: "Get a quote on WhatsApp",
     // },
-    {
+    
+  {
   icon: Zap,
   title: "Electrician Services",
   description:
@@ -145,5 +148,38 @@ export const services = [
   price: "Starting from Rs. 1,500",
   visitFee: "Visit & inspection fee: Rs. 500",
 },
+
+{
+  icon: Snowflake,
+  title: "AC Services",
+  description:
+    "Professional air conditioner repair, cleaning, installation and maintenance services.",
+  details: [
+    "AC general service and cleaning",
+    "Gas charging and leakage checking",
+    "AC installation and removal",
+    "Cooling problem troubleshooting",
+    "Compressor and electrical fault repair",
+  ],
+  price: "Starting from Rs. 2,000",
+  visitFee: "Visit & inspection fee: Rs. 500",
+},
+
+{
+  icon: Refrigerator,
+  title: "Fridge Services",
+  description:
+    "Reliable refrigerator repair and maintenance services for cooling and electrical problems.",
+  details: [
+    "Cooling problem diagnosis",
+    "Gas leakage checking and charging",
+    "Compressor repair and replacement",
+    "Thermostat and sensor repair",
+    "Electrical fault troubleshooting",
+  ],
+  price: "Starting from Rs. 1,800",
+  visitFee: "Visit & inspection fee: Rs. 500",
+},
+
 
   ];
