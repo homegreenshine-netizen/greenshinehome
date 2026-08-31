@@ -319,7 +319,7 @@ export default function HeroSection() {
             {/* WhatsApp */}
             <motion.div whileHover={buttonVariants.hover} whileTap={buttonVariants.tap}>
               <a
-                href="https://wa.me/923001234567"
+                href="https://wa.me/923236304752"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Contact us on WhatsApp"

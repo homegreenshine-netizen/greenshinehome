@@ -15,7 +15,7 @@ import StaggerContainer from "../motion/StaggerContainer";
 import StaggerItem from "../motion/StaggerItem";
 import { useMotionVariants, modalContent, modalBackdrop, fadeUp } from "../motion/animations";
 
-const whatsappNumber = "+923164331042";
+const whatsappNumber = "+923236304752";
 
 export default function ServicesSection() {
   const [selectedService, setSelectedService] = useState<
@@ -84,7 +84,7 @@ export default function ServicesSection() {
               <StaggerItem key={service.title} variant="up">
                 <motion.div
                   whileHover={{ y: -8, transition: { duration: 0.25 } }}
-                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:border-emerald-200 hover:shadow-xl hover:shadow-emerald-500/10"
+                  className="group relative flex flex-col sm:h-[400px] overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:border-emerald-200 hover:shadow-xl hover:shadow-emerald-500/10"
                 >
                   {/* Decorative Glow */}
                   <div className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-emerald-100/40 blur-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -100,7 +100,7 @@ export default function ServicesSection() {
 
                   {/* Content */}
                   <h3 className="relative z-10 mb-3 text-xl font-bold tracking-tight text-slate-900">
-                    {service.title}
+                   {service.title}
                   </h3>
 
                   <p className="relative z-10 mb-4 flex-1 text-sm leading-6 text-slate-600">

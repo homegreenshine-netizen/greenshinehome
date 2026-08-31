@@ -22,7 +22,7 @@ import {
   useMotionVariants,
 } from "../components/motion/animations";
 
-const WHATSAPP_NUMBER = "923164331042";
+const WHATSAPP_NUMBER = "923236304752";
 
 const inputCls = `
   w-full rounded-xl border border-slate-200

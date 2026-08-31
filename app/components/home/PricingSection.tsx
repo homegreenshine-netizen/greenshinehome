@@ -59,12 +59,12 @@ export default function PricingSection() {
           </motion.div>
   
           {/* Pricing Cards */}
-          <StaggerContainer className="grid grid-cols-1 gap-6 md:grid-cols-3" staggerDelay={0.1}>
+          <StaggerContainer className=" grid grid-cols-1 gap-6 md:grid-cols-3" staggerDelay={0.1}>
             {cards.map((card) => (
               <StaggerItem key={card.title} variant="up">
                 <motion.div
                   whileHover={{ y: -6, transition: { duration: 0.25 } }}
-                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:border-emerald-200 hover:shadow-xl hover:shadow-emerald-500/10 sm:p-9"
+                  className="group relative h-96  flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:border-emerald-200 hover:shadow-xl hover:shadow-emerald-500/10 sm:p-9"
                 >
                   {/* Top Gradient */}
                   <div
@@ -82,7 +82,7 @@ export default function PricingSection() {
   
                   {/* Title */}
                   <h3 className="mb-3 text-xl font-bold tracking-tight text-slate-900">
-                    {card.title}
+                   fu {card.title}
                   </h3>
   
                   {/* Description */}

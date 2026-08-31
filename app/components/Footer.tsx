@@ -90,7 +90,7 @@ export default function Footer() {
           </p>
 
           <motion.a
-            href="https://wa.me/923164331042"
+            href="https://wa.me/923236304752"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ x: 5 }}
@@ -139,8 +139,8 @@ export default function Footer() {
           <nav className="flex flex-col items-start gap-3">
             {services.map((service) => (
               <motion.div key={service} whileHover={{ x: 5 }}>
-                <Link
-                  href="/services"
+                <h2
+                 
                   className="
                     text-sm text-slate-600
                     transition-colors duration-200
@@ -148,7 +148,7 @@ export default function Footer() {
                   "
                 >
                   {service}
-                </Link>
+                </h2>
               </motion.div>
             ))}
           </nav>
@@ -167,7 +167,7 @@ export default function Footer() {
             </p>
 
             <a
-              href="tel:+923001234567"
+              href="tel:+923236304752" 
               className="
                 flex items-center gap-2
                 transition-colors
@@ -175,7 +175,7 @@ export default function Footer() {
               "
             >
               <span aria-hidden="true">📞</span>
-              <span>+92 300 1234567</span>
+              <span>03236304752</span>
             </a>
 
             <a
