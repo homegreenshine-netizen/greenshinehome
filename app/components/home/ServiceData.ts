@@ -7,6 +7,7 @@ import {
   Bath,
   Wrench,
   Users,
+  Zap,
 } from "lucide-react";
 export const services = [
     {
@@ -52,7 +53,7 @@ export const services = [
         "Professional cleaning equipment",
       ],
       price: "Contact us for pricing",
-      visitFee: "Get a quote on WhatsApp",
+      visitFee: "Visit & survey fee: Rs. 500",
     },
     {
       icon: Brush,
@@ -67,7 +68,7 @@ export const services = [
         "Suitable for homes and offices",
       ],
       price: "Contact us for pricing",
-      visitFee: "Get a quote on WhatsApp",
+      visitFee: "Visit & survey fee: Rs. 500",
     },
     {
       icon: Building2,
@@ -82,7 +83,7 @@ export const services = [
         "Regular or one-time cleaning",
       ],
       price: "Contact us for pricing",
-      visitFee: "Get a quote on WhatsApp",
+      visitFee: "Visit & survey fee: Rs. 500",
     },
     {
       icon: Bath,
@@ -97,7 +98,7 @@ export const services = [
         "Deep stain and dirt removal",
       ],
       price: "Starting from Rs. 2,350",
-      visitFee: "Get a quote on WhatsApp",
+      visitFee: "Visit & survey fee: Rs. 500",
     },
     // {
     //   icon: Wrench,
@@ -129,4 +130,20 @@ export const services = [
     //   price: "Contact us for pricing",
     //   visitFee: "Get a quote on WhatsApp",
     // },
+    {
+  icon: Zap,
+  title: "Electrician Services",
+  description:
+    "Professional electrical repair, installation and maintenance services for homes and offices.",
+  details: [
+    "Electrical wiring and rewiring",
+    "Switch and socket installation",
+    "Light and fan installation",
+    "Circuit breaker and fuse repair",
+    "Fault detection and troubleshooting",
+  ],
+  price: "Starting from Rs. 1,500",
+  visitFee: "Visit & inspection fee: Rs. 500",
+},
+
   ];

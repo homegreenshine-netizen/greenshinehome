@@ -52,8 +52,9 @@ const services = [
   "Carpet Cleaning",
   "Office Cleaning",
   "Bathroom Cleaning",
-  "Plumbing",
+  // "Plumbing",
   // "Helper Service",
+  "AC, Fridge & Electrician Services",
 ];
 
 const areas = [

@@ -28,6 +28,13 @@ export default function PricingSection() {
       //   desc: "Plumbing prices depend on the type of repair, parts and work required.",
       //   price: "Quote based on work",
       // },
+      {
+  icon: "❄️",
+  title: "AC, Fridge & Electrician Services",
+  desc: "Professional AC, refrigerator, and electrical repair and maintenance services.",
+  price: "Quote based on work",
+},
+
     ];
   
     return (
